@@ -1,4 +1,4 @@
-# WerewolfVoices
+# Werewolf Voices
 Modern Android app built with Kotlin and Jetpack Compose that displays Werewolf game character cards and plays unique sounds for each role.
 
 Werewolf Voicesis a modern Android application built with Kotlin and Jetpack Compose that displays character cards from the classic Werewolf party game. Each card represents a role in the game, and when selected, the app plays a unique sound associated with that character.
