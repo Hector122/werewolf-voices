@@ -1,24 +1,50 @@
-# Werewolf Voices
-Modern Android app built with Kotlin and Jetpack Compose that displays Werewolf game character cards and plays unique sounds for each role.
+# Werewolf Voices 
 
-Werewolf Voicesis a modern Android application built with Kotlin and Jetpack Compose that displays character cards from the classic Werewolf party game. Each card represents a role in the game, and when selected, the app plays a unique sound associated with that character.
+A modern Android application built with **Kotlin** and **Jetpack Compose** that brings the classic Werewolf party game to life with character cards and unique sound effects.
 
-This project follows modern Android development best practices, including MVVI architecture, Coroutines, Flow, and Version Catalog dependency management.
-The goal of this project is to demonstrate a clean and scalable Android architecture while creating a useful companion tool for Werewolf players.
+## 📖 Project Overview
 
-Features
-🐺 List of Werewolf game characters
-🎴 Card-based UI built with Jetpack Compose
-🔊 Character-specific sound effects
-⚡ Asynchronous operations using Kotlin Coroutines
-🧠 MVVI architecture
-📦 Dependency management using Version Catalog (libs.versions.toml)
-🎨 Modern and responsive UI
+**Werewolf Voices** is designed to be the perfect companion for Werewolf game sessions. It displays beautifully rendered character cards, and upon selection, plays a signature sound associated with that role, enhancing the atmosphere of your game nights.
 
-Tech Stack
-Kotlin
-Jetpack Compose
-Coroutines & Flow
-MVVI Architecture
-Android MediaPlayer
-Version Catalog (TOML)
+The project serves as a showcase of modern Android development best practices, emphasizing clean architecture, scalability, and a reactive UI.
+
+---
+
+## ✨ Features
+
+- **🐺 Character Roster:** A comprehensive list of Werewolf game characters.
+- **🎴 Modern UI:** A sleek, card-based interface built entirely with Jetpack Compose.
+- **🔊 Immersive Audio:** Character-specific sound effects triggered by user interaction.
+- **⚡ Reactive & Async:** High performance using Kotlin Coroutines and Flow.
+- **🧠 Clean Architecture:** Built using the MVVM/MVI (MVVI) pattern for better testability and maintenance.
+- **📦 Dependency Management:** Uses Gradle Version Catalogs (`libs.versions.toml`) for centralized versioning.
+- **🎨 Responsive Design:** Adapts smoothly across different screen sizes.
+
+---
+
+## 🛠️ Tech Stack
+
+- **Language:** [Kotlin](https://kotlinlang.org/)
+- **UI Toolkit:** [Jetpack Compose](https://developer.android.com/jetpack/compose)
+- **Asynchronous Programming:** Coroutines & Flow
+- **Architecture:** MVVM/MVI (MVVI)
+- **Audio:** Android MediaPlayer API
+- **Build System:** Gradle (Kotlin DSL) with Version Catalogs (TOML)
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Android Studio Ladybug (or newer)
+- JDK 17
+- Android SDK 24+ (Android 7.0+)
+
+### Installation
+1. Clone the repository:
+   ```bash
+   git clone git@github.com:Hector122/werewolf-voices.git
+   ```
+2. Open the project in **Android Studio**.
+3. Sync the Gradle project.
+4. Run the app on an emulator or physical device.
