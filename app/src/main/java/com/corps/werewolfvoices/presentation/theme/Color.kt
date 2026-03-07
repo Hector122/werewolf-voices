@@ -1,4 +1,4 @@
-package com.corps.werewolfvoices.ui.theme
+package com.corps.werewolfvoices.presentation.theme
 
 import androidx.compose.ui.graphics.Color
 

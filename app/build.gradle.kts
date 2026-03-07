@@ -34,6 +34,14 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
+    //noinspection WrongGradleMethod
+    kotlin {
+        compilerOptions {
+            // This ensures annotations on constructor properties apply
+            // to both the parameter and the field automatically.
+            freeCompilerArgs.add("-Xannotation-default-target=param-property")
+        }
+    }
     buildFeatures {
         compose = true
     }
