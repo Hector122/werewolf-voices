@@ -2,6 +2,7 @@ package com.corps.werewolfvoices.domain.model
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.RawRes
+import com.corps.werewolfvoices.domain.model.CharacterType
 
 data class Character(
     val id: Int,
