@@ -11,6 +11,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.corps.werewolfvoices.presentation.screen.characterlist.CharacterListScreen
 import com.corps.werewolfvoices.presentation.theme.WerewolfVoicesTheme
 
 class MainActivity : ComponentActivity() {
@@ -20,8 +21,12 @@ class MainActivity : ComponentActivity() {
         setContent {
             WerewolfVoicesTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
+
+
+
+                    CharacterListScreen(
+                        characters = listOf(),
+                        onCharacterClick = {},
                         modifier = Modifier.padding(innerPadding)
                     )
                 }

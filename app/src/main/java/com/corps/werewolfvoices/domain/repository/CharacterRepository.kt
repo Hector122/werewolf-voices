@@ -1,8 +1,8 @@
 package com.corps.werewolfvoices.domain.repository
 
 import com.corps.werewolfvoices.domain.model.Character
-import kotlinx.coroutines.flow.Flow
+import com.corps.werewolfvoices.domain.model.DataResult
 
 interface CharacterRepository {
-    fun getCharacter(): Flow<List<Character>>
+    fun getCharacter(): DataResult<List<Character>>
 }
