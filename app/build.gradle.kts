@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.hilt)
+    alias(libs.plugins.legacy.kapt)
 }
 
 android {
@@ -34,16 +36,16 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
-    //noinspection WrongGradleMethod
-    kotlin {
-        compilerOptions {
-            // This ensures annotations on constructor properties apply
-            // to both the parameter and the field automatically.
-            freeCompilerArgs.add("-Xannotation-default-target=param-property")
-        }
-    }
     buildFeatures {
         compose = true
+    }
+}
+
+kotlin {
+    compilerOptions {
+        // This ensures annotations on constructor properties apply
+        // to both the parameter and the field automatically.
+        freeCompilerArgs.add("-Xannotation-default-target=param-property")
     }
 }
 
@@ -65,4 +67,8 @@ dependencies {
     debugImplementation(libs.androidx.compose.ui.test.manifest)
 
     implementation(libs.coil.compose)
+
+    implementation(libs.hilt.android)
+    implementation(libs.hilt.navigation.compose)
+    kapt(libs.hilt.compiler)
 }
