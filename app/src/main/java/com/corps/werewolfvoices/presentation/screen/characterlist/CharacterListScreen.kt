@@ -25,6 +25,8 @@ import com.corps.werewolfvoices.presentation.theme.WerewolfVoicesTheme
 fun CharacterListScreen(
     modifier: Modifier = Modifier,
     characters: List<Character>,
+    isLoading: Boolean = false,
+    errorMessage: String? = null,
     onCharacterClick: (Character) -> Unit,
 ) {
     LazyVerticalGrid(
@@ -35,16 +37,16 @@ fun CharacterListScreen(
         modifier = modifier.fillMaxSize()
     ) {
         item(span = { GridItemSpan(maxLineSpan) }) {
-            Text(stringResource(R.string.werewolf_voices_characters), Modifier.padding(16.dp))
+            Text(stringResource(R.string.werewolf_ambient_sounds), Modifier.padding(16.dp))
         }
 
         items(
             items = characters,
             key = { character -> character.id }
-        ) {
+        ) { character ->
             CharacterCard(
-                character = it,
-                onClick = { onCharacterClick(it) }
+                character = character,
+                onClick = { onCharacterClick(character) }
             )
         }
     }
@@ -53,7 +55,7 @@ fun CharacterListScreen(
 @PreviewLightDark
 @Preview(showBackground = true)
 @Composable
-fun CharacterListScreenPreview() {
+private fun CharacterListScreenPreview() {
     val sampleCharacters = List(12) { i ->
         Character(
             id = i,
