@@ -31,7 +31,7 @@ class LocalDataSourceImp @Inject constructor() : LocalDataSource {
                 ),
                 Character(
                     id = 3,
-                    name = "Werewolf",
+                    name = "Seer",
                     type = CharacterType.SPECIAL,
                     shortDescription = "See who's the werewolf by night!",
                     imageRes = R.drawable.card_seer,

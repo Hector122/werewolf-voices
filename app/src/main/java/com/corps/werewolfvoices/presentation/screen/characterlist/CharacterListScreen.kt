@@ -19,7 +19,7 @@ import com.corps.werewolfvoices.R
 import com.corps.werewolfvoices.domain.model.Character
 import com.corps.werewolfvoices.domain.model.CharacterType
 import com.corps.werewolfvoices.presentation.components.CharacterCard
-import com.corps.werewolfvoices.presentation.theme.WerewolfVoicesTheme
+import com.corps.werewolfvoices.presentation.ui.theme.WerewolfVoicesTheme
 
 @Composable
 fun CharacterListScreen(
