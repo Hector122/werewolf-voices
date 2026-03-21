@@ -1,24 +1,34 @@
 package com.corps.werewolfvoices.data.audio
 
 import android.content.Context
+import android.media.MediaPlayer
 import com.corps.werewolfvoices.domain.audio.AudioPlayer
 
-class MediaPlayer(private val context: Context) : AudioPlayer {
+class MediaAudioPlayer(private val context: Context) : AudioPlayer {
     private var mediaPlayer: MediaPlayer? = null
 
     override fun play(rawResId: Int) {
         mediaPlayer?.stop()
-        mediaPlayer?.release()
 
-        mediaPlayer = MediaPlayer.create(context, rawResId)
-        mediaPlayer?.start()
+        mediaPlayer = MediaPlayer.create(context, rawResId).apply {
+            setOnCompletionListener {
+                release()
+                mediaPlayer = null
+            }
+            start()
+        }
     }
 
     override fun stop() {
-        TODO("Not yet implemented")
+        mediaPlayer?.apply {
+            if (isPlaying) stop()
+            this.release()
+        }
+        mediaPlayer = null
     }
 
     override fun release() {
-        TODO("Not yet implemented")
+        mediaPlayer?.release()
+        mediaPlayer = null
     }
 }
