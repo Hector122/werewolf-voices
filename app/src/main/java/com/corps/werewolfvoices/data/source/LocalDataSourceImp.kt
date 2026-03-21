@@ -17,41 +17,49 @@ class LocalDataSourceImp @Inject constructor() : LocalDataSource {
                     id = 1,
                     name = "Werewolf",
                     type = CharacterType.WEREWOLF,
-                    shortDescription = "Eliminate the villagers by night!",
+                    shortDescription = "Kills a villager each night.",
                     imageRes = R.drawable.card_werewolf,
-                    soundRes = R.raw.cinematic
+                    soundRes = R.raw.sound_cinematic
                 ),
                 Character(
                     id = 2,
                     name = "Villager",
                     type = CharacterType.VILLAGER,
-                    shortDescription = "Find the hidden Werewolves by Day!",
+                    shortDescription = "No special power. Find the wolves!",
                     imageRes = R.drawable.card_villager,
-                    soundRes = R.raw.cinematic
+                    soundRes = R.raw.sound_cinematic
                 ),
                 Character(
                     id = 3,
                     name = "Seer",
                     type = CharacterType.SPECIAL,
-                    shortDescription = "See who's the werewolf by night!",
+                    shortDescription = "Sees one player's role each night.",
                     imageRes = R.drawable.card_seer,
-                    soundRes = R.raw.cinematic
+                    soundRes = R.raw.sound_cinematic
                 ),
                 Character(
                     id = 4,
-                    name = "Werewolf",
+                    name = "Hunter",
                     type = CharacterType.WEREWOLF,
-                    shortDescription = "Eliminate the villagers!",
+                    shortDescription = "Shoots one player upon elimination.",
                     imageRes = R.drawable.card_werewolf,
-                    soundRes = R.raw.cinematic
+                    soundRes = R.raw.sound_cinematic
                 ),
                 Character(
                     id = 5,
-                    name = "Werewolf",
+                    name = "Witch",
                     type = CharacterType.WEREWOLF,
-                    shortDescription = "Eliminate the villagers!",
+                    shortDescription = "Has one healing and one poison potion.",
                     imageRes = R.drawable.card_werewolf,
-                    soundRes = R.raw.cinematic
+                    soundRes = R.raw.sound_cinematic
+                ),
+                Character(
+                    id = 5,
+                    name = "Cupid",
+                    type = CharacterType.WEREWOLF,
+                    shortDescription = "Links two lovers on the first night.",
+                    imageRes = R.drawable.card_werewolf,
+                    soundRes = R.raw.sound_cinematic
                 ),
             )
             DataResult.Success(characters)
