@@ -55,7 +55,7 @@ fun CharacterCard(
             ) {
                 Box {
                     AsyncImage(
-                        model = character.imageRes,
+                        model = character.imageResId,
                         contentDescription = character.name,
                         contentScale = ContentScale.FillBounds,
                         modifier = Modifier
@@ -96,8 +96,8 @@ private fun CharacterCardPreview() {
                 name = "Werewolf",
                 type = CharacterType.SPECIAL,
                 shortDescription = "A classic werewolf character",
-                imageRes = R.drawable.card_seer,
-                soundRes = R.raw.cinematic
+                imageResId = R.drawable.card_seer,
+                soundResId = R.raw.sound_cinematic
             )
         )
     }

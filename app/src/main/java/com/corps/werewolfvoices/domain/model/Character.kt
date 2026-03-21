@@ -8,6 +8,6 @@ data class Character(
     val name: String,
     val type: CharacterType,
     val shortDescription: String,
-    @DrawableRes val imageRes: Int,
-    @RawRes val soundRes: Int
+    @DrawableRes val imageResId: Int,
+    @RawRes val soundResId: Int
 )

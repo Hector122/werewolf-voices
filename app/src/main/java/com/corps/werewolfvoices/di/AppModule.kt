@@ -1,7 +1,7 @@
 package com.corps.werewolfvoices.di
 
-import com.corps.werewolfvoices.data.datasource.LocalDataSourceImp
 import com.corps.werewolfvoices.data.repository.CharacterRepositoryImpl
+import com.corps.werewolfvoices.data.source.LocalDataSourceImp
 import com.corps.werewolfvoices.domain.datasource.LocalDataSource
 import com.corps.werewolfvoices.domain.repository.CharacterRepository
 import dagger.Binds
@@ -29,6 +29,7 @@ abstract class AppModule {
     abstract fun bindCharacterRepository(
         characterRepositoryImpl: CharacterRepositoryImpl
     ): CharacterRepository
+
 
     companion object {
         @Provides

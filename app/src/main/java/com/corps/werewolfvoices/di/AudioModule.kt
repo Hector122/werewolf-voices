@@ -1,6 +1,6 @@
 package com.corps.werewolfvoices.di
 
-import com.corps.werewolfvoices.data.audio.AudioPlayer
+import com.corps.werewolfvoices.domain.audio.AudioPlayer
 import com.corps.werewolfvoices.data.audio.ExoAudioPlayer
 import dagger.Binds
 import dagger.Module

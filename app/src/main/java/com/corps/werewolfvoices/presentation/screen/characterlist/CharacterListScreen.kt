@@ -70,8 +70,8 @@ private fun CharacterListScreenPreview() {
                 else -> CharacterType.SPECIAL
             },
             shortDescription = "This is a short description for character number $i in the werewolf game.",
-            imageRes = 0,
-            soundRes = 0
+            imageResId = 0,
+            soundResId = 0
         )
     }
     WerewolfVoicesTheme() {
