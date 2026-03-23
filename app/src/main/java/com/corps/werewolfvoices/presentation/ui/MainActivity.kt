@@ -29,7 +29,7 @@ class MainActivity : ComponentActivity() {
                 Scaffold(modifier = Modifier.Companion.fillMaxSize()) { innerPadding ->
                     CharacterListScreen(
                         characters = uiState.value.characters,
-                        onCharacterClick = { },
+                        onCharacterClick = { character -> viewModel.onCharacterClicked(character) },
                         isLoading = uiState.value.isLoading,
                         errorMessage = uiState.value.errorMessage,
                         modifier = Modifier.Companion.padding(innerPadding)

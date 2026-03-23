@@ -49,7 +49,7 @@ fun CharacterListScreen(
                 onClick = { onCharacterClick(character) }
             )
         }
-    }
+    }:Q
 }
 
 @PreviewLightDark

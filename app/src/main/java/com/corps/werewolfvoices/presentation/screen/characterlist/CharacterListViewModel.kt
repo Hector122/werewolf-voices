@@ -62,7 +62,7 @@ class CharacterListViewModel @Inject constructor(
         }
     }
 
-    private fun onCharacterClicked(character: Character) {
+    fun onCharacterClicked(character: Character) {
         audioPlayer.stop()
         playSoundUseCase(character.soundResId)
     }
