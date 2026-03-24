@@ -1,11 +1,14 @@
 package com.corps.werewolfvoices.presentation.screen.characterlist
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.corps.werewolfvoices.R
 import com.corps.werewolfvoices.domain.audio.AudioPlayer
 import com.corps.werewolfvoices.domain.model.DataResult
 import com.corps.werewolfvoices.domain.usecase.GetCharactersUseCase
 import com.corps.werewolfvoices.domain.usecase.PlaySoundUseCase
+import com.corps.werewolfvoices.presentation.common.UiText
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -35,7 +38,7 @@ class CharacterListViewModel @Inject constructor(
     )
 
     // Use a Channel for events (Buffered ensures events aren't lost if the UI is busy)
-    private val _events = Channel<CharacterListUiEvent>(Channel.BUFFERED)
+    private val _events = Channel<CharacterListEvent>(Channel.BUFFERED)
     val events = _events.receiveAsFlow()
 
     fun onIntent(intent: CharacterListAction) {
@@ -49,7 +52,12 @@ class CharacterListViewModel @Inject constructor(
         val result = playSoundUseCase(intent.character.soundResId)
         result.onFailure { error ->
             viewModelScope.launch {
-                _events.send(CharacterListUiEvent.ShowErrorMessage(error.message ?: "Unknown error playing sound"))
+                Log.e("CharacterListViewModel", "Error playing sound", error)
+                _events.send(
+                    CharacterListEvent.ShowErrorMessage(
+                        UiText.StringResource(R.string.error_unable_to_play_sound)
+                    )
+                )
             }
         }
     }

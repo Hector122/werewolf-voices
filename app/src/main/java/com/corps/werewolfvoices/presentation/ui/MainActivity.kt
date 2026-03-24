@@ -14,8 +14,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.corps.werewolfvoices.presentation.screen.characterlist.CharacterListEvent
 import com.corps.werewolfvoices.presentation.screen.characterlist.CharacterListScreen
-import com.corps.werewolfvoices.presentation.screen.characterlist.CharacterListUiEvent
 import com.corps.werewolfvoices.presentation.screen.characterlist.CharacterListViewModel
 import com.corps.werewolfvoices.presentation.ui.theme.WerewolfVoicesTheme
 import dagger.hilt.android.AndroidEntryPoint
@@ -34,8 +34,9 @@ class MainActivity : ComponentActivity() {
                 LaunchedEffect(Unit) {
                     viewModel.events.collect { event ->
                         when (event) {
-                            is CharacterListUiEvent.ShowErrorMessage -> {
-                                Toast.makeText(context, event.message, Toast.LENGTH_SHORT).show()
+                            is CharacterListEvent.ShowErrorMessage -> {
+                                val message = event.message.asString(context)
+                                Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
                             }
                         }
                     }

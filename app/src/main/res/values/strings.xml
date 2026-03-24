@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">WerewolfVoices</string>
     <string name="werewolf_ambient_sounds">Werewolf Ambient Sounds</string>
+    <string name="error_unable_to_play_sound">Unable to play sound</string>
+
 </resources>
