@@ -12,13 +12,18 @@ class ExoAudioPlayer @Inject constructor(
 ) : AudioPlayer {
     private val player = ExoPlayer.Builder(context).build()
 
-    override fun play(rawResId: Int) {
-        val uri = "android.resource://${context.packageName}/$rawResId"
-        player.apply {
-            stop() // Ensure only one sound plays at a time
-            setMediaItem(MediaItem.fromUri(uri))
-            prepare()
-            play()
+    override fun play(rawResId: Int): Result<Unit> {
+        return try {
+            val uri = "android.resource://${context.packageName}/$rawResId"
+            player.apply {
+                stop() // Ensure only one sound plays at a time
+                setMediaItem(MediaItem.fromUri(uri))
+                prepare()
+                play()
+            }
+            Result.success(Unit)
+        } catch (e: Exception) {
+            Result.failure(e)
         }
     }
 

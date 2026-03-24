@@ -24,10 +24,8 @@ import com.corps.werewolfvoices.presentation.ui.theme.WerewolfVoicesTheme
 @Composable
 fun CharacterListScreen(
     modifier: Modifier = Modifier,
-    characters: List<Character>,
-    isLoading: Boolean = false,
-    errorMessage: String? = null,
-    onCharacterClick: (Character) -> Unit,
+    uiState: CharacterListUiState,
+    onIntent: (CharacterListAction) -> Unit
 ) {
     LazyVerticalGrid(
         columns = GridCells.Adaptive(minSize = 128.dp),
@@ -41,15 +39,15 @@ fun CharacterListScreen(
         }
 
         items(
-            items = characters,
+            items = uiState.characters,
             key = { character -> character.id }
         ) { character ->
             CharacterCard(
                 character = character,
-                onClick = { onCharacterClick(character) }
+                onClick = { onIntent(CharacterListAction.PlayCharacterSound(character)) }
             )
         }
-    }:Q
+    }
 }
 
 @PreviewLightDark
@@ -76,8 +74,8 @@ private fun CharacterListScreenPreview() {
     }
     WerewolfVoicesTheme() {
         CharacterListScreen(
-            characters = sampleCharacters,
-            onCharacterClick = {}
+            uiState = CharacterListUiState(characters = sampleCharacters, isLoading = false),
+            onIntent = {}
         )
     }
 }
