@@ -110,10 +110,8 @@ fun CharacterCard(
                             .height(200.dp)
                     )
 
-                    Text(
-                        text = character.name,
-                        style = MaterialTheme.typography.titleMedium,
-                        color = MaterialTheme.colorScheme.onPrimary,
+                    CharacterTypeChip(
+                        type = character.type,
                         modifier = Modifier
                             .align(Alignment.TopEnd)
                             .padding(8.dp)
@@ -141,7 +139,7 @@ private fun CharacterCardPreview() {
             character = Character(
                 id = 1,
                 name = "Werewolf",
-                type = CharacterType.SPECIAL,
+                type = CharacterType.WEREWOLF,
                 shortDescription = "A classic werewolf character",
                 imageResId = R.drawable.card_seer,
                 soundResId = R.raw.sound_cinematic
