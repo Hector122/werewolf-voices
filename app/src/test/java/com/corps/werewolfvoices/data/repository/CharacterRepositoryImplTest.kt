@@ -23,63 +23,65 @@ import org.junit.Test
 class CharacterRepositoryImplTest {
 
     private lateinit var repository: CharacterRepositoryImpl
-    private val dataSource: LocalDataSource = mockk()
+    private lateinit var dataSource: LocalDataSource
     private val testDispatcher = StandardTestDispatcher()
 
     @Before
     fun setUp() {
-        repository = CharacterRepositoryImpl(dataSource, testDispatcher)
+        dataSource = mockk()
         Dispatchers.setMain(testDispatcher)
+        repository = CharacterRepositoryImpl(dataSource, testDispatcher)
     }
 
     @After
     fun tearDown() {
-        unmockkAll()
         Dispatchers.resetMain()
+        unmockkAll()
     }
 
     @Test
-    fun `getCharacter should return success when data source returns success`() = runTest(testDispatcher) {
-        // Given
+    fun `getCharacter returns success when data source succeeds`() = runTest(testDispatcher) {
         val characters = listOf(
-            Character(1, "Werewolf", CharacterType.WEREWOLF, "Desc", 0, 0)
+            Character(
+                1, "Werewolf", CharacterType.WEREWOLF,
+                "Desc", 0, 0
+            )
         )
-        val expectedResult = DataResult.Success(characters)
-        coEvery { dataSource.getCharacters() } returns expectedResult
+        val expected = DataResult.Success(characters)
+        coEvery { dataSource.getCharacters() } returns expected
 
-        // When
         val result = repository.getCharacter()
 
-        // Then
-        assertEquals(expectedResult, result)
-
-
+        assertEquals(expected, result)
         coVerify(exactly = 1) { dataSource.getCharacters() }
     }
 
     @Test
-    fun `getCharacter should return error when data source returns error`() = runTest(testDispatcher) {
-        // Given
-        val expectedResult = DataResult.Error("Error message", Exception())
-        coEvery { dataSource.getCharacters() } returns expectedResult
+    fun `getCharacter returns error when data source returns error`() = runTest(testDispatcher) {
+        val exception = Exception("DB error")
+        val expected = DataResult.Error("Error message", exception)
+        coEvery { dataSource.getCharacters() } returns expected
 
-        // When
         val result = repository.getCharacter()
 
-        // Then
-        assertEquals(expectedResult, result)
+        assertEquals(expected, result)
+        coVerify(exactly = 1) { dataSource.getCharacters() }
     }
 
     @Test
-    fun `getCharacter should handle empty list`() = runTest(testDispatcher) {
-        coEvery { dataSource.getCharacters() } returns DataResult.Success(emptyList())
+    fun `getCharacter returns success with empty list`() = runTest(testDispatcher) {
+        val expected = DataResult.Success(emptyList<Character>())
+        coEvery { dataSource.getCharacters() } returns expected
+
         val result = repository.getCharacter()
-        assertEquals(DataResult.Success(emptyList<Character>()), result)
+
+        assertEquals(expected, result)
     }
 
-    @Test
-    fun `getCharacter should handle thrown exception`() = runTest(testDispatcher) {
-        coEvery { dataSource.getCharacters() } throws RuntimeException("DB crashed")
-        // assert whatever your repository is supposed to do — wrap it? rethrow?
-    }
+    //TODO:
+//    @Test
+//    fun `getCharacter should handle thrown exception`() = runTest(testDispatcher) {
+//        coEvery { dataSource.getCharacters() } throws RuntimeException("DB crashed")
+//        // assert whatever your repository is supposed to do — wrap it? rethrow?
+//    }
 }
