@@ -14,7 +14,7 @@ class CharacterRepositoryImpl @Inject constructor(
     private val dispatcher: CoroutineDispatcher = Dispatchers.IO
 ) : CharacterRepository {
 
-    override suspend fun getCharacter(): DataResult<List<Character>> {
+    override suspend fun getCharacters(): DataResult<List<Character>> {
         return withContext(dispatcher) { dataSource.getCharacters() }
     }
 }

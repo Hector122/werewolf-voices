@@ -4,5 +4,5 @@ import com.corps.werewolfvoices.domain.model.Character
 import com.corps.werewolfvoices.domain.model.DataResult
 
 interface CharacterRepository {
-    suspend fun getCharacter(): DataResult<List<Character>>
+    suspend fun getCharacters(): DataResult<List<Character>>
 }

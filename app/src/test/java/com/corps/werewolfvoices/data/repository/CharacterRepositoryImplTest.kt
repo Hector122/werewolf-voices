@@ -50,7 +50,7 @@ class CharacterRepositoryImplTest {
         val expected = DataResult.Success(characters)
         coEvery { dataSource.getCharacters() } returns expected
 
-        val result = repository.getCharacter()
+        val result = repository.getCharacters()
 
         assertEquals(expected, result)
         coVerify(exactly = 1) { dataSource.getCharacters() }
@@ -62,7 +62,7 @@ class CharacterRepositoryImplTest {
         val expected = DataResult.Error("Error message", exception)
         coEvery { dataSource.getCharacters() } returns expected
 
-        val result = repository.getCharacter()
+        val result = repository.getCharacters()
 
         assertEquals(expected, result)
         coVerify(exactly = 1) { dataSource.getCharacters() }
@@ -73,7 +73,7 @@ class CharacterRepositoryImplTest {
         val expected = DataResult.Success(emptyList<Character>())
         coEvery { dataSource.getCharacters() } returns expected
 
-        val result = repository.getCharacter()
+        val result = repository.getCharacters()
 
         assertEquals(expected, result)
     }
