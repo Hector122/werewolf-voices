@@ -77,11 +77,4 @@ class CharacterRepositoryImplTest {
 
         assertEquals(expected, result)
     }
-
-    //TODO:
-//    @Test
-//    fun `getCharacter should handle thrown exception`() = runTest(testDispatcher) {
-//        coEvery { dataSource.getCharacters() } throws RuntimeException("DB crashed")
-//        // assert whatever your repository is supposed to do — wrap it? rethrow?
-//    }
 }
