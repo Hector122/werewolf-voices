@@ -1,4 +1,4 @@
-package com.corps.werewolfvoices.presentation.screen.characterlist
+package com.corps.werewolfvoices.ui.characterlist
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
@@ -18,8 +18,8 @@ import androidx.compose.ui.unit.dp
 import com.corps.werewolfvoices.R
 import com.corps.werewolfvoices.domain.model.Character
 import com.corps.werewolfvoices.domain.model.CharacterType
-import com.corps.werewolfvoices.presentation.components.CharacterCard
-import com.corps.werewolfvoices.presentation.ui.theme.WerewolfVoicesTheme
+import com.corps.werewolfvoices.ui.components.CharacterCard
+import com.corps.werewolfvoices.ui.theme.WerewolfVoicesTheme
 
 @Composable
 fun CharacterListScreen(

@@ -1,4 +1,4 @@
-package com.corps.werewolfvoices.presentation.models
+package com.corps.werewolfvoices.ui.models
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.RawRes

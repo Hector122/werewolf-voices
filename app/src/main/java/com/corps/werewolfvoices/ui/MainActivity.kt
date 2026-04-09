@@ -1,4 +1,4 @@
-package com.corps.werewolfvoices.presentation.ui
+package com.corps.werewolfvoices.ui
 
 import android.os.Bundle
 import android.widget.Toast
@@ -14,10 +14,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.corps.werewolfvoices.presentation.screen.characterlist.CharacterListEvent
-import com.corps.werewolfvoices.presentation.screen.characterlist.CharacterListScreen
-import com.corps.werewolfvoices.presentation.screen.characterlist.CharacterListViewModel
-import com.corps.werewolfvoices.presentation.ui.theme.WerewolfVoicesTheme
+import com.corps.werewolfvoices.ui.characterlist.CharacterListEvent
+import com.corps.werewolfvoices.ui.characterlist.CharacterListScreen
+import com.corps.werewolfvoices.ui.characterlist.CharacterListViewModel
+import com.corps.werewolfvoices.ui.theme.WerewolfVoicesTheme
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

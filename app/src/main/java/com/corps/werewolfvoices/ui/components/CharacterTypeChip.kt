@@ -1,4 +1,4 @@
-package com.corps.werewolfvoices.presentation.components
+package com.corps.werewolfvoices.ui.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border

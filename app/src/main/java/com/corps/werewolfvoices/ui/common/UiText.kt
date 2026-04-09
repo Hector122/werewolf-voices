@@ -1,4 +1,4 @@
-package com.corps.werewolfvoices.presentation.common
+package com.corps.werewolfvoices.ui.common
 
 import android.content.Context
 import androidx.annotation.StringRes

@@ -1,4 +1,4 @@
-package com.corps.werewolfvoices.presentation.components
+package com.corps.werewolfvoices.ui.components
 
 import androidx.compose.animation.core.Spring
 import androidx.compose.animation.core.animateFloatAsState
@@ -38,7 +38,7 @@ import coil.compose.AsyncImage
 import com.corps.werewolfvoices.R
 import com.corps.werewolfvoices.domain.model.Character
 import com.corps.werewolfvoices.domain.model.CharacterType
-import com.corps.werewolfvoices.presentation.ui.theme.WerewolfVoicesTheme
+import com.corps.werewolfvoices.ui.theme.WerewolfVoicesTheme
 import kotlinx.coroutines.delay
 
 @Composable

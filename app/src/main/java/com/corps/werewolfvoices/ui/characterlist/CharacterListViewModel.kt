@@ -1,4 +1,4 @@
-package com.corps.werewolfvoices.presentation.screen.characterlist
+package com.corps.werewolfvoices.ui.characterlist
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
@@ -8,7 +8,7 @@ import com.corps.werewolfvoices.domain.audio.AudioPlayer
 import com.corps.werewolfvoices.domain.model.DataResult
 import com.corps.werewolfvoices.domain.usecase.GetCharactersUseCase
 import com.corps.werewolfvoices.domain.usecase.PlaySoundUseCase
-import com.corps.werewolfvoices.presentation.common.UiText
+import com.corps.werewolfvoices.ui.common.UiText
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.MutableStateFlow

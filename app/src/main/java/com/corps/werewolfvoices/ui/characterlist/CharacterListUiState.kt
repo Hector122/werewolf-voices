@@ -1,4 +1,4 @@
-package com.corps.werewolfvoices.presentation.screen.characterlist
+package com.corps.werewolfvoices.ui.characterlist
 
 import com.corps.werewolfvoices.domain.model.Character
 import javax.annotation.concurrent.Immutable
