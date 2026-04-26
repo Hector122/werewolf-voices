@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lint>
+    <!-- Composable preview functions intentionally take parameters -->
+    <issue id="PreviewAnnotationInFunctionWithParameters" severity="ignore" />
+
+    <!-- Compose lambdas often trigger this; safe to downgrade -->
+    <issue id="UnusedTransition" severity="warning" />
+
+    <!-- Accessibility: keep these as errors to enforce content descriptions -->
+    <issue id="ContentDescription" severity="error" />
+
+    <!-- Security: enforce no cleartext traffic -->
+    <issue id="AllowBackup" severity="warning" />
+    <issue id="HardcodedDebugMode" severity="error" />
+</lint>

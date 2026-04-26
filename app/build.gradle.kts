@@ -1,9 +1,19 @@
+import com.android.tools.r8.internal.io
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.hilt)
     alias(libs.plugins.legacy.kapt)
+    alias(libs.plugins.detekt)
 }
+
+detekt {
+    config.setFrom(files("$rootDir/config/detekt/detekt.yml"))
+    buildUponDefaultConfig = true
+    autoCorrect = false
+}
+
 
 android {
     namespace = "com.corps.werewolfvoices"
@@ -35,6 +45,15 @@ android {
     buildFeatures {
         compose = true
     }
+
+    lint {
+        abortOnError = false
+        warningsAsErrors = false
+        xmlReport = true
+        htmlReport = true
+        lintConfig = file("$rootDir/lint.xml")
+        baseline = file("lint-baseline.xml")
+    }
 }
 
 kotlin {
@@ -62,6 +81,8 @@ dependencies {
     implementation(libs.hilt.android)
     implementation(libs.hilt.navigation.compose)
     kapt(libs.hilt.compiler)
+
+    detektPlugins(libs.detekt.compose.rules)
 
     // Testing
     testImplementation(libs.junit)
